@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<!-- creating the title....... -->
+		<title>SimpleLogic Logic Gates</title>
+		<link rel="stylesheet" href="css/style.css">
+		
+ 
+		<script src="js/polyfill.js"></script>
+		<script src="js/modules.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/nodes.js"></script>
+		<script src="js/SimpleLogic.js"></script>
+		<script src="timer.js"></script>
+		
+
+		
+		<script>
+		
+		
+		<!-- Refrashing part ............300 is refreshing takes time -->
+		
+			function onload () {
+				simpleLogic = new SQUARIFIC.simpleLogic.SimpleLogic(document.getElementById("drawCanvas"), document.getElementById("overlay"));
+				setTimeout(function () {loadMenu(simpleLogic)}, 300);
+				reloadmodules();
+			}
+
+		</script>
+<script>
+	function display_alert()
+	{	
+	
+		<!-- Have to implement to get the Vc -->
+		
+		
+		<!-- float Vin = parseInt(document.getElementById("val1").value); -->
+		<!-- float R = parseInt(document.getElementById("val2").value); -->
+		<!-- float C = parseInt(document.getElementById("val3").value); -->
+		<!-- int t =  -->
+		<!-- float Vc = Vin*[1-Math.pow(e,(-1)*t/(R*C)]; -->
+		alert("The capacitor charge value is...");
+		
+	}
+</script>
+
+
+		
+	</head>
+	<body>
+		<div class="mainmessage">Logic gates and oscilloscope graph for electrical circuits </div>
+		<div id="menu" class="menu">
+			
+			<div class ="notice">
+				Logic gate simulator
+			</div>
+			<div class="menusection">
+				<div class="section">INPUTS</div>
+				
+				<div id="LEVER" class="node"></div>
+				<div >black light means FALSE</div>
+				<div>white light means TRUE</div>
+				
+			</div>
+			
+			
+			<div class = "menus">
+				<div class="section">VALUES</div>
+				<div id = "CpVl">
+				<table class = "tabl">
+				<tr ><td id = "td"> value for voltage:</td><td><input type="text" id = "val1"></td><tr>
+				<tr><td id = "td">value for rectifier:</td><td><input type="text" id = "val2"></td><tr>
+				<tr><td id = "td">value for capacitor:</td><td><input type="text" id = "val3"></td><tr>
+				
+				<tr><td><input type = "submit" value = "submit" style = "#54673" onclick = "display_alert()"></td></tr>
+				</table><br>
+				
+				</div>
+			</div>
+			
+			<input type="submit" id = "start-clock" value = "Click here to Start timer" name = "submit" onClick = "starClock()"></input><br><br>
+				<input id = "timer" value=0 type = "button"></input><br><br>
+				<input type="submit" id = "stop-clock" value = "Click here to stop and reset the timer" name = "submit"  onClick = "stopClock()"></input>
+			<div class="menusection">
+				<div class="section">OSCILLO WORK</div>
+				<div id="switchCs" class="node">switch</div><br>
+				<div id="rectifier" class="node"></div>
+				<div id="capacitor" class="node"></div>
+				<div id="voltage" class="node"></div>
+				<div >R for rectifier</div>
+				<div>C for capacitor</div>
+				<div>V for input valtage</div>
+			</div>
+			
+			
+			
+			<div class="menusection">
+				<div class="section">LOGIC GATES</div>
+				<div id="OR" class="node"></div>
+				<div id="NOR" class="node"></div>
+				<div id="XOR" class="node"></div>
+				<div id="XNOR" class="node"></div>
+				<div id="AND" class="node"></div>
+				<div id="NAND" class="node"></div>
+				<div id="NOT" class="node"></div>
+			
+				
+			</div>
+			
+			
+			
+			<div class="menusection">
+				<div class="section">OUTPUTS FOR GATES</div>
+				<div id="LEVER3" class="node"></div>
+				<div >For internal outputs</div>
+				<div id="LIGHT" class="node"></div>
+				<div >For the last outputs</div>
+				
+			</div>
+			
+		</div>
+		<div class="drawContainer">
+			<canvas id="drawCanvas" class="drawZone"></canvas>
+			<div id="overlay" class="drawZone"></div>
+		</div>
+		
+		<script>
+			onload();
+		</script>
+		
+	</body>
+</html>
